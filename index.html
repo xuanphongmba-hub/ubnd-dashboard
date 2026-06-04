@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bảng theo dõi nhiệm vụ Lãnh đạo UBND tỉnh — Kỳ họp thứ Hai, HĐND tỉnh khóa XI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233a;
+    --ink-soft:#46556e;
+    --muted:#7b889e;
+    --bg:#f3f1ea;
+    --surface:#ffffff;
+    --surface-2:#fbfaf6;
+    --primary:#1b3a6b;
+    --primary-deep:#102747;
+    --accent:#a4242c;          /* official red */
+    --gold:#a98a3f;
+    --green:#2f7d52;
+    --green-bg:#e7f1ea;
+    --amber:#c0791a;
+    --amber-bg:#f7eedb;
+    --grey-bg:#eceae3;
+    --line:#dcd7c9;
+    --line-soft:#e8e4d8;
+    --shadow:0 1px 2px rgba(16,39,71,.04),0 8px 24px rgba(16,39,71,.06);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 12% -10%,rgba(27,58,107,.05),transparent 45%),radial-gradient(circle at 100% 0,rgba(164,36,44,.04),transparent 40%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:0 22px 64px}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    position:relative;
+    margin-top:22px;
+    background:linear-gradient(160deg,var(--primary-deep),var(--primary) 78%);
+    color:#fff;border-radius:var(--radius);
+    padding:30px 34px 26px;overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .masthead::before{content:"";position:absolute;inset:0;background:
+    repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 2px,transparent 2px 9px);}
+  .masthead::after{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--accent),var(--gold) 55%,var(--accent));}
+  .crest{display:flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:#cdd9ee;font-weight:600;margin-bottom:6px}
+  .crest .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .masthead h1{font-family:'Lora',serif;font-weight:700;font-size:clamp(22px,2.6vw,32px);
+    line-height:1.18;letter-spacing:-.01em;max-width:60ch;position:relative}
+  .masthead .sub{margin-top:8px;color:#d6e0f1;font-size:15px;max-width:75ch;position:relative}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:18px;position:relative}
+  .meta-row .m{display:flex;flex-direction:column;gap:1px}
+  .meta-row .m .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#aebfdc}
+  .meta-row .m .v{font-size:15px;font-weight:600;color:#fff}
+  .meta-row .m .v b{color:#ffd9a8}
+
+  /* ---------- KPI strip ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+  .kpi{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .kpi .bar{position:absolute;left:0;top:0;bottom:0;width:4px}
+  .kpi .lab{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em;display:flex;align-items:center;gap:6px}
+  .kpi .num{font-family:'Lora',serif;font-size:34px;font-weight:700;line-height:1.1;margin-top:4px;color:var(--ink)}
+  .kpi .note{font-size:12px;color:var(--ink-soft);margin-top:2px}
+  .kpi.total .bar{background:var(--primary)}
+  .kpi.nq .bar{background:var(--gold)}
+  .kpi.done .bar{background:var(--green)} .kpi.done .num{color:var(--green)}
+  .kpi.pending .bar{background:var(--amber)} .kpi.pending .num{color:var(--amber)}
+  .kpi.deadline .bar{background:var(--accent)} .kpi.deadline .num{color:var(--accent)}
+
+  /* ---------- panels ---------- */
+  .grid-2{display:grid;grid-template-columns:340px 1fr;gap:16px;margin-top:16px}
+  .panel{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:20px 22px}
+  .panel h2{font-family:'Lora',serif;font-size:16px;font-weight:600;color:var(--primary-deep);
+    display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .panel h2 .tag{font-family:'Be Vietnam Pro';font-size:11px;font-weight:600;color:var(--muted);
+    margin-left:auto;text-transform:uppercase;letter-spacing:.05em}
+
+  /* donut */
+  .donut-box{display:flex;align-items:center;gap:18px;margin-top:14px}
+  .donut{position:relative;width:140px;height:140px;flex:none}
+  .donut svg{transform:rotate(-90deg)}
+  .donut .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .donut .center .p{font-family:'Lora',serif;font-size:30px;font-weight:700;color:var(--primary-deep);line-height:1}
+  .donut .center .t{font-size:11px;color:var(--muted);margin-top:2px}
+  .legend{display:flex;flex-direction:column;gap:10px;font-size:13.5px}
+  .legend .li{display:flex;align-items:center;gap:9px}
+  .legend .sw{width:12px;height:12px;border-radius:3px;flex:none}
+  .legend .li b{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:700}
+  .scope-note{margin-top:14px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+
+  /* per-leader bars */
+  .lbars{display:flex;flex-direction:column;gap:13px;margin-top:16px}
+  .lbar{cursor:pointer;border-radius:9px;padding:9px 11px;border:1px solid transparent;transition:.18s}
+  .lbar:hover{background:var(--surface-2);border-color:var(--line-soft)}
+  .lbar.active{background:#eef3fb;border-color:#c3d4ee}
+  .lbar .top{display:flex;align-items:baseline;gap:8px;font-size:13.5px}
+  .lbar .nm{font-weight:600;color:var(--ink)}
+  .lbar .ro{font-size:11.5px;color:var(--muted)}
+  .lbar .ct{margin-left:auto;font-size:12.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .lbar .ct b{color:var(--green)}
+  .track{height:9px;border-radius:6px;background:var(--grey-bg);margin-top:7px;overflow:hidden;display:flex}
+  .track .fill{background:linear-gradient(90deg,#3a8f63,var(--green));height:100%;transition:width .5s ease}
+
+  /* ---------- controls ---------- */
+  .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 14px}
+  .toolbar .title{font-family:'Lora',serif;font-size:19px;font-weight:600;color:var(--primary-deep);margin-right:auto;display:flex;align-items:center;gap:10px}
+  .toolbar .title .cnt{font-family:'Be Vietnam Pro';font-size:12.5px;font-weight:600;color:#fff;background:var(--primary);padding:2px 10px;border-radius:20px}
+  .search{position:relative}
+  .search input{width:300px;max-width:46vw;padding:9px 12px 9px 34px;border:1px solid var(--line);border-radius:9px;
+    font-family:inherit;font-size:13.5px;background:var(--surface);color:var(--ink)}
+  .search input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(27,58,107,.12)}
+  .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.5}
+  .segs{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--surface)}
+  .segs button{border:none;background:none;padding:9px 13px;font-family:inherit;font-size:13px;font-weight:600;
+    color:var(--ink-soft);cursor:pointer;border-right:1px solid var(--line-soft);transition:.15s;white-space:nowrap}
+  .segs button:last-child{border-right:none}
+  .segs button.on{background:var(--primary);color:#fff}
+  .segs.status button.on[data-v="submitted"]{background:var(--green)}
+  .segs.status button.on[data-v="pending"]{background:var(--amber)}
+  .btn-reset{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:9px 13px;
+    font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-soft);cursor:pointer;display:flex;align-items:center;gap:6px}
+  .btn-reset:hover{border-color:var(--accent);color:var(--accent)}
+  .active-scope{display:none;align-items:center;gap:8px;font-size:13px;background:#eef3fb;border:1px solid #c3d4ee;
+    color:var(--primary-deep);padding:6px 8px 6px 13px;border-radius:9px;font-weight:600;width:100%;margin-bottom:4px}
+  .active-scope.show{display:flex}
+  .active-scope button{margin-left:auto;border:none;background:var(--primary);color:#fff;width:22px;height:22px;
+    border-radius:50%;cursor:pointer;font-size:13px;line-height:1}
+
+  /* ---------- table ---------- */
+  .table-wrap{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{background:var(--primary-deep);color:#e9eefb;font-weight:600;text-align:left;
+    padding:12px 14px;font-size:12px;letter-spacing:.03em;text-transform:uppercase;position:sticky;top:0;z-index:5}
+  thead th.c{text-align:center}
+  .grp td{background:linear-gradient(90deg,#eef2f8,#f6f8fc);padding:11px 14px;border-top:2px solid var(--primary)}
+  .grp .gwrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .grp .rn{font-family:'Lora',serif;font-weight:700;color:var(--primary);font-size:15px;background:#fff;
+    border:1.5px solid var(--primary);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+  .grp .gname{font-weight:700;color:var(--primary-deep);font-size:14.5px}
+  .grp .grole{font-size:12px;color:var(--ink-soft);font-weight:500}
+  .grp .gstat{margin-left:auto;display:flex;gap:7px;align-items:center}
+  .chip{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .chip.g{background:var(--green-bg);color:var(--green)}
+  .chip.a{background:var(--amber-bg);color:var(--amber)}
+  .chip.n{background:#efe7cf;color:#8a6a17}
+  tbody tr.row{border-top:1px solid var(--line-soft);transition:background .12s}
+  tbody tr.row:hover{background:var(--surface-2)}
+  tbody td{padding:12px 14px;vertical-align:top}
+  td.idx{color:var(--muted);font-variant-numeric:tabular-nums;text-align:center;width:34px;font-weight:600}
+  .content{max-width:520px}
+  .content .ct{font-weight:500;color:var(--ink);line-height:1.45}
+  .content .typ{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:1px 7px;
+    border-radius:5px;margin-bottom:5px;text-transform:uppercase}
+  .typ.nq{background:#f3ead2;color:#86671a}
+  .typ.bc{background:#e4eaf3;color:#365581}
+  td.org{color:var(--ink-soft);width:150px}
+  td.vp{color:var(--ink-soft);width:120px;font-size:13px}
+  td.div{color:var(--ink-soft);width:120px;font-size:13px}
+  td.stat{width:118px;text-align:center}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:5px 11px;border-radius:20px;white-space:nowrap}
+  .pill.submitted{background:var(--green-bg);color:var(--green)}
+  .pill.pending{background:var(--amber-bg);color:var(--amber)}
+  .pill .d{width:7px;height:7px;border-radius:50%;background:currentColor}
+  td.note{font-size:12.5px;color:var(--ink-soft);max-width:230px;line-height:1.4}
+  td.note .em{color:var(--muted);font-style:italic}
+  .empty{padding:48px;text-align:center;color:var(--muted);font-size:14px}
+  tr.norow td{border-top:1px solid var(--line-soft)}
+  .norow-c{padding:11px 14px;font-size:13px;color:var(--muted);font-style:italic;background:var(--surface-2)}
+  .norow-c b{color:var(--ink-soft);font-style:normal}
+  .track.zero{background:repeating-linear-gradient(45deg,#ecede7,#ecede7 6px,#e2e3da 6px,#e2e3da 12px)}
+
+  footer{margin-top:26px;font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
+  footer b{color:var(--ink-soft)}
+
+  /* responsive */
+  @media(max-width:980px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .grid-2{grid-template-columns:1fr}
+    .content,td.note{max-width:none}
+    table{font-size:12.5px}
+    td.org,td.vp,td.div{width:auto}
+  }
+  @media(max-width:560px){.kpis{grid-template-columns:1fr}.masthead{padding:24px 20px}}
+
+  @media print{
+    body{background:#fff}
+    .toolbar,.search,.segs,.btn-reset,.scope-note,.active-scope{display:none!important}
+    .masthead,.kpi,.panel,.table-wrap{box-shadow:none;break-inside:avoid}
+    thead th{position:static}
+    .lbar{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="crest"><span class="dot"></span> Ủy ban nhân dân tỉnh Đắk Lắk · Văn phòng UBND tỉnh</div>
+    <h1>Bảng theo dõi tiến độ chuẩn bị nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI (nhiệm kỳ 2026–2030)</h1>
+    <p class="sub">Theo dõi nhiệm vụ phân công cho Chủ tịch và các Phó Chủ tịch UBND tỉnh — Kỳ họp thường lệ giữa năm 2026.</p>
+    <div class="meta-row">
+      <div class="m"><span class="k">Số liệu cập nhật</span><span class="v">08h00, ngày 04/6/2026</span></div>
+      <div class="m"><span class="k">Hạn hoàn thành thủ tục, ký gửi HĐND</span><span class="v"><b>Chậm nhất 17/6/2026</b></span></div>
+      <div class="m"><span class="k">Số bộ hồ sơ gửi HĐND tỉnh</span><span class="v">35 bộ</span></div>
+      <div class="m"><span class="k">Đầu mối theo dõi</span><span class="v">Văn phòng UBND tỉnh</span></div>
+    </div>
+  </header>
+
+  <!-- KPI -->
+  <section class="kpis">
+    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung đăng ký</div><div class="num">30</div><div class="note">Đầu mục các sở, ngành trình kỳ họp</div></div>
+    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num">14</div><div class="note">16 Báo cáo / Tờ trình khác</div></div>
+    <div class="kpi done"><span class="bar"></span><div class="lab">Đã trình UBND tỉnh</div><div class="num" id="kpiDone">7</div><div class="note" id="kpiDonePct">Đạt 23,3% khối lượng</div></div>
+    <div class="kpi pending"><span class="bar"></span><div class="lab">Chưa trình</div><div class="num" id="kpiPend">23</div><div class="note">Cần đẩy nhanh tiến độ</div></div>
+    <div class="kpi deadline"><span class="bar"></span><div class="lab">Thời hạn còn lại</div><div class="num" id="kpiDays">—</div><div class="note">Tính đến hạn 17/6/2026</div></div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="grid-2">
+    <div class="panel">
+      <h2>Tiến độ tổng thể <span class="tag" id="donutScope">Toàn tỉnh</span></h2>
+      <div class="donut-box">
+        <div class="donut">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="58" fill="none" stroke="#eceae3" stroke-width="16"/>
+            <circle id="donutArc" cx="70" cy="70" r="58" fill="none" stroke="#2f7d52" stroke-width="16"
+              stroke-linecap="round" stroke-dasharray="364.4" stroke-dashoffset="364.4"/>
+          </svg>
+          <div class="center"><div class="p" id="donutPct">0%</div><div class="t">đã trình</div></div>
+        </div>
+        <div class="legend">
+          <div class="li"><span class="sw" style="background:var(--green)"></span> Đã trình UBND tỉnh <b id="legDone">0</b></div>
+          <div class="li"><span class="sw" style="background:var(--amber)"></span> Chưa trình <b id="legPend">0</b></div>
+          <div class="li"><span class="sw" style="background:#cfcabd"></span> Tổng nội dung <b id="legTotal">0</b></div>
+        </div>
+      </div>
+      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của toàn bộ 30 nội dung. Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Tiến độ theo từng đồng chí lãnh đạo <span class="tag">Bấm để tra cứu</span></h2>
+      <div class="lbars" id="leaderBars"></div>
+    </div>
+  </section>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="title">Danh mục nhiệm vụ chi tiết <span class="cnt" id="rowCount">30</span></div>
+    <div class="search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="search" type="text" placeholder="Tìm theo nội dung, cơ quan, phòng...">
+    </div>
+    <div class="segs status" id="segStatus">
+      <button class="on" data-v="all">Tất cả tiến độ</button>
+      <button data-v="submitted">Đã trình</button>
+      <button data-v="pending">Chưa trình</button>
+    </div>
+    <div class="segs" id="segType">
+      <button class="on" data-v="all">Mọi loại</button>
+      <button data-v="NQ">Nghị quyết</button>
+      <button data-v="BC">Báo cáo / khác</button>
+    </div>
+    <button class="btn-reset" id="reset">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      Đặt lại
+    </button>
+  </div>
+  <div class="active-scope" id="activeScope"></div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="c">TT</th>
+          <th>Nội dung</th>
+          <th>Cơ quan chủ trì, tham mưu</th>
+          <th>Lãnh đạo VP theo dõi</th>
+          <th>Phòng chuyên môn</th>
+          <th class="c">Tiến độ</th>
+          <th>Ghi chú</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display:none">Không có nội dung nào khớp với bộ lọc hiện tại.</div>
+  </div>
+
+  <footer>
+    Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 08h00 ngày 04/6/2026.<br>
+    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 30 nội dung (14 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
+  </footer>
+</div>
+
+<script>
+/* ====================== DỮ LIỆU ====================== */
+const LEADERS = [
+  {id:'CT',  no:'I',   name:'Chủ tịch UBND tỉnh',         role:'Chủ tịch UBND tỉnh'},
+  {id:'PCT1',no:'II',  name:'Hồ Thị Nguyên Thảo',         role:'Phó Chủ tịch Thường trực UBND tỉnh'},
+  {id:'PCT2',no:'III', name:'Nguyễn Thiên Văn',           role:'Phó Chủ tịch UBND tỉnh'},
+  {id:'PCT3',no:'IV',  name:'Trương Công Thái',           role:'Phó Chủ tịch UBND tỉnh'},
+  {id:'PCT4',no:'V',   name:'Đào Mỹ',                     role:'Phó Chủ tịch UBND tỉnh'},
+];
+
+// type: 'NQ' = Tờ trình + Nghị quyết ; 'BC' = Báo cáo / nội dung khác
+// status: 'submitted' = Đã trình ; 'pending' = Chưa trình
+const TASKS = [
+  // I — Chủ tịch UBND tỉnh
+  {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về công tác chỉ đạo, điều hành 6 tháng đầu năm 2026, phương hướng, nhiệm vụ công tác 6 tháng cuối năm 2026',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
+  {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về tình hình thực hiện công tác phòng, chống tội phạm và vi phạm pháp luật 6 tháng đầu năm 2026, phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Công an tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
+  {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về tình hình thực hiện công tác phòng, chống tham nhũng, tiêu cực 6 tháng đầu năm 2026, phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Thanh tra tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
+
+  // II — Hồ Thị Nguyên Thảo
+  {l:'PCT1',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về thực hiện các Kết luận của Chủ tọa Kỳ họp tại Kỳ họp thứ 28 HĐND tỉnh Phú Yên khóa VIII (trước đây) và Kỳ họp thứ Hai HĐND tỉnh Đắk Lắk khóa X',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 186/BC-UBND ngày 28/5/2026 của UBND tỉnh'},
+  {l:'PCT1',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về trả lời kiến nghị của cử tri trong đợt tiếp xúc cử tri với người ứng cử đại biểu HĐND tỉnh khóa XI',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 163/BC-UBND ngày 13/5/2026 của UBND tỉnh'},
+  {l:'PCT1',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định chính sách hỗ trợ Tổ Công nghệ số cộng đồng trên địa bàn tỉnh Đắk Lắk',org:'Sở Khoa học và Công nghệ',vp:'Đ/c Khánh - PCVP',div:'Khoa giáo - Văn xã',note:''},
+  {l:'PCT1',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện các kiến nghị, đề xuất giám sát của Thường trực HĐND, các Ban của HĐND tỉnh năm 2025',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
+
+  // III — Nguyễn Thiên Văn
+  {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định mức hỗ trợ khắc phục dịch bệnh động vật trên địa bàn tỉnh Đắk Lắk',org:'Sở Nông nghiệp và Môi trường',vp:'Đ/c Hùng - PCVP',div:'Nông nghiệp và Môi trường',note:'UBND tỉnh đã trình BTV Đảng ủy UBND tỉnh tại Tờ trình số 173/TTr-UBND ngày 01/6/2026'},
+  {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định nội dung chi và mức chi hỗ trợ cho các hoạt động khuyến nông từ nguồn kinh phí khuyến nông địa phương trên địa bàn tỉnh Đắk Lắk',org:'Sở Nông nghiệp và Môi trường',vp:'Đ/c Hùng - PCVP',div:'Nông nghiệp và Môi trường',note:'Đang lấy ý kiến TV UBND tỉnh tại Công văn số 1525/VPUBND-NNMT ngày 28/5/2026. Đang tổng hợp ý kiến TV UBND tỉnh.'},
+  {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định mức hỗ trợ sản xuất nông nghiệp để khôi phục sản xuất vùng bị thiệt hại do thiên tai, dịch hại thực vật trên địa bàn tỉnh Đắk Lắk',org:'Sở Nông nghiệp và Môi trường',vp:'Đ/c Hùng - PCVP',div:'Nông nghiệp và Môi trường',note:'Đã trình UBND tỉnh. Đã có Báo cáo Tổng hợp ý kiến TV UBND tỉnh tại Báo cáo số 372/BC-VPUBND ngày 22/5/2026'},
+  {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định chính sách hỗ trợ chuyển đổi nghề, giải bản tàu cá và ổn định đời sống hộ gia đình chủ sở hữu tàu cá không còn nhu cầu hoạt động khai thác thủy sản trên địa bàn tỉnh Đắk Lắk đến năm 2030',org:'Sở Nông nghiệp và Môi trường',vp:'Đ/c Hùng - PCVP',div:'Nông nghiệp và Môi trường',note:'Văn phòng UBND tỉnh đang rà soát, hoàn thiện Tờ trình trình BTV Đảng ủy UBND tỉnh để báo cáo xin ý kiến BTV Tỉnh ủy'},
+  {l:'PCT2',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định nội dung, mức chi để tổ chức các kỳ thi, cuộc thi, hội thi, hội thao, hội khỏe Phù Đổng, hoạt động sáng kiến trên địa bàn tỉnh Đắk Lắk',org:'Sở Giáo dục và Đào tạo',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo và Văn xã',note:''},
+  {l:'PCT2',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định về nhân sự, kinh phí để thực hiện việc dạy và học tiếng Việt cho trẻ em là người dân tộc thiểu số trước khi vào lớp Một trên địa bàn tỉnh Đắk Lắk',org:'Sở Giáo dục và Đào tạo',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo và Văn xã',note:''},
+  {l:'PCT2',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định về việc Hỗ trợ kinh phí khám, chữa bệnh, nghỉ dưỡng sức, thăm ốm đau, thăm tặng quà nhân dịp Tết Nguyên Đán đối với cán bộ thuộc diện Ban Thường vụ Tỉnh ủy quản lý và một số đối tượng khác trên địa bàn tỉnh Đắk Lắk',org:'Sở Y tế',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo và Văn xã',note:''},
+  {l:'PCT2',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện Chương trình mục tiêu quốc gia về giảm nghèo bền vững tỉnh Đắk Lắk, giai đoạn 2021 - 2025',org:'Sở Nông nghiệp và Môi trường',vp:'Đ/c Hùng - PCVP',div:'Nông nghiệp và Môi trường',note:''},
+  {l:'PCT2',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện các Nghị quyết của HĐND tỉnh có liên quan đến thực hiện chính sách thu hút, đào tạo và đãi ngộ bác sĩ và một số chế độ chính sách ưu đãi, hỗ trợ đối với viên chức công tác trong lĩnh vực y tế và nhân viên y tế thôn, buôn, tổ dân phố trên địa bàn tỉnh Đắk Lắk (Nghị quyết số 12/2019/NQ-HĐND ngày 6/12/2019)',org:'Sở Y tế',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo - Văn xã',note:''},
+  {l:'PCT2',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện Chương trình giáo dục phổ thông năm 2018 trên địa bàn tỉnh Đắk Lắk',org:'Sở Giáo dục và Đào tạo',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo - Văn xã',note:''},
+
+  // IV — Trương Công Thái
+  {l:'PCT3',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về đánh giá bổ sung kết quả thực hiện kế hoạch phát triển kinh tế - xã hội; đảm bảo quốc phòng - an ninh năm 2025',org:'Sở Tài chính',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
+  {l:'PCT3',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện kế hoạch phát triển kinh tế - xã hội, đảm bảo quốc phòng, an ninh 6 tháng đầu năm và các nhiệm vụ trọng tâm 6 tháng cuối năm 2026',org:'Sở Tài chính',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
+  {l:'PCT3',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả việc triển khai kịch bản điều hành nền kinh tế 6 tháng đầu năm 2026, nhiệm vụ 6 tháng cuối năm 2026 nhằm đảm bảo mục tiêu tăng trưởng năm 2026, đạt GRDP 11% trở lên',org:'Sở Tài chính',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
+  {l:'PCT3',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh điều chỉnh và phân bổ chi tiết kế hoạch đầu tư công năm 2026 nguồn ngân sách địa phương',org:'Sở Tài chính',vp:'Đ/c Thượng - PCVP',div:'Đầu tư - Kinh tế',note:''},
+  {l:'PCT3',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định cơ chế phân cấp quyết định phân bổ, điều chỉnh kế hoạch đầu tư công trung hạn, hằng năm vốn ngân sách trung ương, ngân sách tỉnh chi tiết theo dự án thành phần, danh mục và mức vốn bố trí thực hiện dự án, nhiệm vụ đầu tư công của từng chương trình MTQG giai đoạn 2026-2030 trên địa bàn tỉnh Đắk Lắk',org:'Sở Tài chính',vp:'Đ/c Thượng - PCVP',div:'Đầu tư - Kinh tế',note:''},
+  {l:'PCT3',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về tình hình thực hiện kế hoạch đầu tư công 6 tháng đầu năm 2026, kế hoạch 6 tháng cuối năm 2026',org:'Sở Tài chính',vp:'Đ/c Thượng - PCVP',div:'Đầu tư - Kinh tế',note:''},
+  {l:'PCT3',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về tình hình thực hiện công tác thực hành tiết kiệm, chống lãng phí 6 tháng đầu năm 2026, phương hướng, mục tiêu, nhiệm vụ 6 tháng cuối năm 2026',org:'Sở Tài chính',vp:'Đ/c Hòa - PCVP',div:'Đầu tư - Kinh tế',note:''},
+  {l:'PCT3',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện Nghị quyết 16/NQ-HĐND ngày 14/7/2023 của HĐND tỉnh thông qua Chương trình phát triển nhà ở tỉnh Đắk Lắk giai đoạn 2021 - 2030',org:'Sở Xây dựng',vp:'Đ/c Thượng - PCVP',div:'Công nghiệp và Xây dựng',note:''},
+
+  // V — Đào Mỹ
+  {l:'PCT4',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh phê duyệt Đề án xây dựng tổ chức hoạt động lực lượng Quân báo nhân dân trong Dân quân tự vệ giai đoạn 2026-2030 và những năm tiếp theo',org:'Bộ Chỉ huy quân sự tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:'Đã có Báo cáo Tổng hợp ý kiến TV UBND tỉnh. Đang trình lãnh đạo ký ban hành Nghị quyết và Tờ trình gửi HĐND tỉnh.'},
+  {l:'PCT4',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định chính sách hỗ trợ đầu tư hạ tầng kỹ thuật cụm công nghiệp trên địa bàn tỉnh Đắk Lắk',org:'Sở Công Thương',vp:'Đ/c Thượng - PCVP',div:'Công nghiệp và Xây dựng',note:''},
+  {l:'PCT4',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định mức chi phí quản lý thực hiện Pháp lệnh ưu đãi Người có công với cách mạng do ngân sách Trung ương đảm bảo trên địa bàn tỉnh Đắk Lắk',org:'Sở Nội vụ',vp:'Đ/c Toàn - PCVP',div:'Nội vụ',note:''},
+  {l:'PCT4',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định tiêu chí thành lập Đội dân phòng và số lượng thành viên Đội dân phòng trên địa bàn tỉnh Đắk Lắk',org:'Công an tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
+  {l:'PCT4',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả công tác tiếp công dân, giải quyết khiếu nại, tố cáo 6 tháng đầu năm 2026 và phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Thanh tra tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
+];
+
+/* ====================== TRẠNG THÁI ====================== */
+let state = {leader:'all', status:'all', type:'all', q:''};
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
+const C = 2*Math.PI*58; // chu vi donut
+
+function leaderMeta(id){return LEADERS.find(x=>x.id===id);}
+function tasksOf(id){return TASKS.filter(t=>t.l===id);}
+function stat(list){const d=list.filter(t=>t.status==='submitted').length;return {total:list.length,done:d,pend:list.length-d,pct:list.length?Math.round(d/list.length*100):0};}
+
+/* ---- KPI tổng + donut + scope ---- */
+function renderOverview(){
+  const scoped = state.leader==='all' ? TASKS : tasksOf(state.leader);
+  const s = stat(scoped);
+  document.getElementById('legDone').textContent = s.done;
+  document.getElementById('legPend').textContent = s.pend;
+  document.getElementById('legTotal').textContent = s.total;
+  document.getElementById('donutPct').textContent = s.pct+'%';
+  document.getElementById('donutArc').style.strokeDashoffset = C*(1 - s.pct/100);
+  const scopeLabel = state.leader==='all' ? 'Toàn tỉnh' : leaderMeta(state.leader).name;
+  document.getElementById('donutScope').textContent = scopeLabel;
+  document.getElementById('scopeNote').innerHTML = state.leader==='all'
+    ? 'Đang hiển thị tiến độ tổng hợp của toàn bộ 30 nội dung. Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.'
+    : `Đang lọc theo <b>${leaderMeta(state.leader).role}</b> — ${scopeLabel}: <b>${s.done}/${s.total}</b> nội dung đã trình.`;
+
+  // KPI tổng luôn theo toàn tỉnh để giữ tính tham chiếu
+  const all = stat(TASKS);
+  document.getElementById('kpiDone').textContent = all.done;
+  document.getElementById('kpiPend').textContent = all.pend;
+  document.getElementById('kpiDonePct').textContent = 'Đạt '+ all.pct.toFixed(0) +'% khối lượng';
+}
+
+/* ---- Thanh tiến độ theo lãnh đạo ---- */
+function renderLeaderBars(){
+  const box = document.getElementById('leaderBars');
+  box.innerHTML = LEADERS.map(L=>{
+    const s = stat(tasksOf(L.id));
+    const active = state.leader===L.id ? ' active':'';
+    const roShort = (L.role && L.role!==L.name) ? `<span class="ro">· ${L.role.replace('UBND tỉnh','').trim()}</span>` : '';
+    return `<div class="lbar${active}" data-leader="${L.id}">
+      <div class="top">
+        <span class="nm">${L.name}</span>
+        ${roShort}
+        <span class="ct"><b>${s.done}</b>/${s.total} đã trình · ${s.pct}%</span>
+      </div>
+      <div class="track${s.pct===0?' zero':''}"><div class="fill" style="width:${s.pct}%"></div></div>
+    </div>`;
+  }).join('');
+  box.querySelectorAll('.lbar').forEach(el=>{
+    el.onclick=()=>{ state.leader = state.leader===el.dataset.leader ? 'all' : el.dataset.leader; syncAll(); };
+  });
+}
+
+/* ---- Bảng chi tiết ---- */
+function renderTable(){
+  const tb = document.getElementById('tbody');
+  const q = norm(state.q.trim());
+  let html=''; let shown=0; let globalIdx=0;
+
+  LEADERS.forEach(L=>{
+    if(state.leader!=='all' && state.leader!==L.id) { globalIdx += tasksOf(L.id).length; return; }
+    const rows = tasksOf(L.id).map((t,i)=>({t, idx:++globalIdx})).filter(({t})=>{
+      if(state.status!=='all' && t.status!==state.status) return false;
+      if(state.type!=='all' && t.type!==state.type) return false;
+      if(q){ const blob = norm(t.content+' '+t.org+' '+t.vp+' '+t.div+' '+t.note); if(!blob.includes(q)) return false; }
+      return true;
+    });
+    const s = stat(tasksOf(L.id));
+    const roleLine = (L.role && L.role!==L.name) ? ` <span class="grole">— ${L.role}</span>` : '';
+    // Luôn hiển thị tiêu đề của từng đồng chí lãnh đạo, kể cả khi bộ lọc không có nội dung khớp
+    html += `<tr class="grp"><td colspan="7"><div class="gwrap">
+        <span class="rn">${L.no}</span>
+        <span><span class="gname">${L.name}</span>${roleLine}</span>
+        <span class="gstat">
+          <span class="chip n">${s.total} nội dung</span>
+          <span class="chip g">Đã trình ${s.done}</span>
+          <span class="chip a">Chưa trình ${s.pend}</span>
+        </span>
+      </div></td></tr>`;
+    if(!rows.length){
+      const why = (q || state.status!=='all' || state.type!=='all')
+        ? `Không có nội dung khớp với bộ lọc hiện tại — đồng chí có tổng cộng <b>${s.total}</b> nội dung (đã trình ${s.done}, chưa trình ${s.pend}). Bỏ bộ lọc để xem đầy đủ.`
+        : `Chưa có nội dung được phân công.`;
+      html += `<tr class="norow"><td class="idx">—</td><td colspan="6" class="norow-c">${why}</td></tr>`;
+      return;
+    }
+    rows.forEach(({t,idx})=>{
+      shown++;
+      const pillTxt = t.status==='submitted' ? 'Đã trình' : 'Chưa trình';
+      html += `<tr class="row">
+        <td class="idx">${idx}</td>
+        <td class="content"><span class="typ ${t.type==='NQ'?'nq':'bc'}">${t.type==='NQ'?'Nghị quyết':'Báo cáo / khác'}</span><div class="ct">${t.content}</div></td>
+        <td class="org">${t.org}</td>
+        <td class="vp">${t.vp}</td>
+        <td class="div">${t.div}</td>
+        <td class="stat"><span class="pill ${t.status}"><span class="d"></span>${pillTxt}</span></td>
+        <td class="note">${t.note ? t.note : '<span class="em">—</span>'}</td>
+      </tr>`;
+    });
+  });
+
+  tb.innerHTML = html;
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('rowCount').textContent = shown;
+}
+
+/* ---- Chỉ báo phạm vi đang lọc ---- */
+function renderScopeChip(){
+  const el = document.getElementById('activeScope');
+  if(state.leader==='all'){ el.className='active-scope'; el.innerHTML=''; return; }
+  const L = leaderMeta(state.leader);
+  el.className='active-scope show';
+  el.innerHTML = `Đang tra cứu nhiệm vụ của: <b>&nbsp;${L.name}</b>&nbsp;(${L.role})
+    <button title="Xem tất cả lãnh đạo" id="clearLeader">×</button>`;
+  document.getElementById('clearLeader').onclick=()=>{state.leader='all';syncAll();};
+}
+
+/* ---- Đếm ngày còn lại ---- */
+function renderCountdown(){
+  const deadline = new Date(2026,5,17); // 17/6/2026
+  const now = new Date(); now.setHours(0,0,0,0);
+  const days = Math.round((deadline - now)/86400000);
+  const el = document.getElementById('kpiDays');
+  if(days>0) el.textContent = days + ' ngày';
+  else if(days===0) el.textContent = 'Hôm nay';
+  else { el.textContent = 'Quá hạn'; el.style.color='var(--accent)'; }
+}
+
+function syncAll(){
+  document.querySelectorAll('#segStatus button').forEach(b=>b.classList.toggle('on',b.dataset.v===state.status));
+  document.querySelectorAll('#segType button').forEach(b=>b.classList.toggle('on',b.dataset.v===state.type));
+  renderOverview(); renderLeaderBars(); renderScopeChip(); renderTable();
+}
+
+/* ---- Sự kiện ---- */
+document.getElementById('segStatus').onclick=e=>{const b=e.target.closest('button');if(b){state.status=b.dataset.v;syncAll();}};
+document.getElementById('segType').onclick=e=>{const b=e.target.closest('button');if(b){state.type=b.dataset.v;syncAll();}};
+document.getElementById('search').oninput=e=>{state.q=e.target.value;renderTable();};
+document.getElementById('reset').onclick=()=>{state={leader:'all',status:'all',type:'all',q:''};document.getElementById('search').value='';syncAll();};
+
+renderCountdown();
+syncAll();
+</script>
+</body>
+</html>
