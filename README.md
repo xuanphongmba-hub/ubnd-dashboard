@@ -4,8 +4,7 @@ Dashboard theo dõi tiến độ chuẩn bị các nội dung trình **Kỳ họ
 
 ## Tổng quan số liệu (cập nhật 16h00 ngày 04/6/2026)
 
-- **29** nội dung đang theo dõi (trong đó **13 Nghị quyết**).
-  *Lưu ý: văn bản ghi 30 nội dung đăng ký (14 NQ) — đã rút nội dung "hỗ trợ Tổ Công nghệ số cộng đồng" khỏi danh mục theo dõi.*
+- **29** nội dung trình kỳ họp (trong đó **13 Nghị quyết**).
 - **07** nội dung đã trình UBND tỉnh.
 - Hạn hoàn thành thủ tục, ký gửi HĐND tỉnh: **chậm nhất 17/6/2026** (gửi 35 bộ hồ sơ).
 

@@ -225,7 +225,7 @@
 
   <!-- KPI -->
   <section class="kpis">
-    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung theo dõi</div><div class="num" id="kpiTotal">29</div><div class="note" id="kpiTotalNote">VB đăng ký 30 — đã rút 01 nội dung</div></div>
+    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung</div><div class="num" id="kpiTotal">29</div><div class="note" id="kpiTotalNote">Danh mục trình Kỳ họp thứ Hai</div></div>
     <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num" id="kpiNQ">13</div><div class="note" id="kpiNQNote">16 Báo cáo / Tờ trình khác</div></div>
     <div class="kpi done"><span class="bar"></span><div class="lab">Đã trình UBND tỉnh</div><div class="num" id="kpiDone">7</div><div class="note" id="kpiDonePct">Đạt 23,3% khối lượng</div></div>
     <div class="kpi pending"><span class="bar"></span><div class="lab">Chưa trình</div><div class="num" id="kpiPend">23</div><div class="note">Cần đẩy nhanh tiến độ</div></div>
@@ -251,7 +251,7 @@
           <div class="li"><span class="sw" style="background:#cfcabd"></span> Tổng nội dung <b id="legTotal">0</b></div>
         </div>
       </div>
-      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 29 nội dung đang theo dõi. Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
+      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 29 nội dung (13 Nghị quyết). Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
     </div>
 
     <div class="panel">
@@ -305,7 +305,7 @@
 
   <footer>
     Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 16h00 ngày 04/6/2026.<br>
-    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Đang theo dõi: 29 nội dung (13 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
+    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 29 nội dung (13 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
   </footer>
 </div>
 
@@ -383,7 +383,7 @@ function renderOverview(){
   const scopeLabel = state.leader==='all' ? 'Toàn tỉnh' : leaderMeta(state.leader).name;
   document.getElementById('donutScope').textContent = scopeLabel;
   document.getElementById('scopeNote').innerHTML = state.leader==='all'
-    ? `Đang hiển thị tiến độ tổng hợp của <b>${s.total}</b> nội dung đang theo dõi. <span style="color:var(--muted)">(Văn bản ghi 30 nội dung đăng ký — đã rút nội dung "hỗ trợ Tổ Công nghệ số cộng đồng".)</span> Bấm vào từng đồng chí lãnh đạo để xem riêng.`
+    ? `Đang hiển thị tiến độ tổng hợp của <b>${s.total}</b> nội dung (${TASKS.filter(t=>t.type==='NQ').length} Nghị quyết). Bấm vào từng đồng chí lãnh đạo để xem riêng.`
     : `Đang lọc theo <b>${leaderMeta(state.leader).role}</b> — ${scopeLabel}: <b>${s.done}/${s.total}</b> nội dung đã trình.`;
 
   // KPI tổng luôn theo toàn tỉnh để giữ tính tham chiếu
