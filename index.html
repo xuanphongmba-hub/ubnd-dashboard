@@ -216,7 +216,7 @@
     <h1>Bảng theo dõi tiến độ chuẩn bị nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI (nhiệm kỳ 2026–2030)</h1>
     <p class="sub">Theo dõi nhiệm vụ phân công cho Chủ tịch và các Phó Chủ tịch UBND tỉnh — Kỳ họp thường lệ giữa năm 2026.</p>
     <div class="meta-row">
-      <div class="m"><span class="k">Số liệu cập nhật</span><span class="v">08h00, ngày 04/6/2026</span></div>
+      <div class="m"><span class="k">Số liệu cập nhật</span><span class="v">16h00, ngày 04/6/2026</span></div>
       <div class="m"><span class="k">Hạn hoàn thành thủ tục, ký gửi HĐND</span><span class="v"><b>Chậm nhất 17/6/2026</b></span></div>
       <div class="m"><span class="k">Số bộ hồ sơ gửi HĐND tỉnh</span><span class="v">35 bộ</span></div>
       <div class="m"><span class="k">Đầu mối theo dõi</span><span class="v">Văn phòng UBND tỉnh</span></div>
@@ -225,8 +225,8 @@
 
   <!-- KPI -->
   <section class="kpis">
-    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung đăng ký</div><div class="num">30</div><div class="note">Đầu mục các sở, ngành trình kỳ họp</div></div>
-    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num">14</div><div class="note">16 Báo cáo / Tờ trình khác</div></div>
+    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung theo dõi</div><div class="num" id="kpiTotal">29</div><div class="note" id="kpiTotalNote">VB đăng ký 30 — đã rút 01 nội dung</div></div>
+    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num" id="kpiNQ">13</div><div class="note" id="kpiNQNote">16 Báo cáo / Tờ trình khác</div></div>
     <div class="kpi done"><span class="bar"></span><div class="lab">Đã trình UBND tỉnh</div><div class="num" id="kpiDone">7</div><div class="note" id="kpiDonePct">Đạt 23,3% khối lượng</div></div>
     <div class="kpi pending"><span class="bar"></span><div class="lab">Chưa trình</div><div class="num" id="kpiPend">23</div><div class="note">Cần đẩy nhanh tiến độ</div></div>
     <div class="kpi deadline"><span class="bar"></span><div class="lab">Thời hạn còn lại</div><div class="num" id="kpiDays">—</div><div class="note">Tính đến hạn 17/6/2026</div></div>
@@ -251,7 +251,7 @@
           <div class="li"><span class="sw" style="background:#cfcabd"></span> Tổng nội dung <b id="legTotal">0</b></div>
         </div>
       </div>
-      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của toàn bộ 30 nội dung. Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
+      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 29 nội dung đang theo dõi. Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
     </div>
 
     <div class="panel">
@@ -304,8 +304,8 @@
   </div>
 
   <footer>
-    Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 08h00 ngày 04/6/2026.<br>
-    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 30 nội dung (14 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
+    Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 16h00 ngày 04/6/2026.<br>
+    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Đang theo dõi: 29 nội dung (13 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
   </footer>
 </div>
 
@@ -330,7 +330,6 @@ const TASKS = [
   // II — Hồ Thị Nguyên Thảo
   {l:'PCT1',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về thực hiện các Kết luận của Chủ tọa Kỳ họp tại Kỳ họp thứ 28 HĐND tỉnh Phú Yên khóa VIII (trước đây) và Kỳ họp thứ Hai HĐND tỉnh Đắk Lắk khóa X',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 186/BC-UBND ngày 28/5/2026 của UBND tỉnh'},
   {l:'PCT1',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về trả lời kiến nghị của cử tri trong đợt tiếp xúc cử tri với người ứng cử đại biểu HĐND tỉnh khóa XI',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 163/BC-UBND ngày 13/5/2026 của UBND tỉnh'},
-  {l:'PCT1',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định chính sách hỗ trợ Tổ Công nghệ số cộng đồng trên địa bàn tỉnh Đắk Lắk',org:'Sở Khoa học và Công nghệ',vp:'Đ/c Khánh - PCVP',div:'Khoa giáo - Văn xã',note:''},
   {l:'PCT1',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện các kiến nghị, đề xuất giám sát của Thường trực HĐND, các Ban của HĐND tỉnh năm 2025',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
 
   // III — Nguyễn Thiên Văn
@@ -384,11 +383,15 @@ function renderOverview(){
   const scopeLabel = state.leader==='all' ? 'Toàn tỉnh' : leaderMeta(state.leader).name;
   document.getElementById('donutScope').textContent = scopeLabel;
   document.getElementById('scopeNote').innerHTML = state.leader==='all'
-    ? 'Đang hiển thị tiến độ tổng hợp của toàn bộ 30 nội dung. Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.'
+    ? `Đang hiển thị tiến độ tổng hợp của <b>${s.total}</b> nội dung đang theo dõi. <span style="color:var(--muted)">(Văn bản ghi 30 nội dung đăng ký — đã rút nội dung "hỗ trợ Tổ Công nghệ số cộng đồng".)</span> Bấm vào từng đồng chí lãnh đạo để xem riêng.`
     : `Đang lọc theo <b>${leaderMeta(state.leader).role}</b> — ${scopeLabel}: <b>${s.done}/${s.total}</b> nội dung đã trình.`;
 
   // KPI tổng luôn theo toàn tỉnh để giữ tính tham chiếu
   const all = stat(TASKS);
+  const nq = TASKS.filter(t=>t.type==='NQ').length;
+  document.getElementById('kpiTotal').textContent = all.total;
+  document.getElementById('kpiNQ').textContent = nq;
+  document.getElementById('kpiNQNote').textContent = (all.total - nq) + ' Báo cáo / Tờ trình khác';
   document.getElementById('kpiDone').textContent = all.done;
   document.getElementById('kpiPend').textContent = all.pend;
   document.getElementById('kpiDonePct').textContent = 'Đạt '+ all.pct.toFixed(0) +'% khối lượng';

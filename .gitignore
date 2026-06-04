@@ -1,0 +1,5 @@
+*.png
+*.bundle
+*.zip
+.ghtoken
+.DS_Store
