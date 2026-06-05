@@ -216,7 +216,7 @@
     <h1>Bảng theo dõi tiến độ chuẩn bị nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI (nhiệm kỳ 2026–2030)</h1>
     <p class="sub">Theo dõi nhiệm vụ phân công cho Chủ tịch và các Phó Chủ tịch UBND tỉnh — Kỳ họp thường lệ giữa năm 2026.</p>
     <div class="meta-row">
-      <div class="m"><span class="k">Số liệu cập nhật</span><span class="v">16h00, ngày 04/6/2026</span></div>
+      <div class="m"><span class="k">Số liệu cập nhật</span><span class="v">08h00, ngày 05/6/2026</span></div>
       <div class="m"><span class="k">Hạn hoàn thành thủ tục, ký gửi HĐND</span><span class="v"><b>Chậm nhất 17/6/2026</b></span></div>
       <div class="m"><span class="k">Số bộ hồ sơ gửi HĐND tỉnh</span><span class="v">35 bộ</span></div>
       <div class="m"><span class="k">Đầu mối theo dõi</span><span class="v">Văn phòng UBND tỉnh</span></div>
@@ -225,8 +225,8 @@
 
   <!-- KPI -->
   <section class="kpis">
-    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung</div><div class="num" id="kpiTotal">29</div><div class="note" id="kpiTotalNote">Danh mục trình Kỳ họp thứ Hai</div></div>
-    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num" id="kpiNQ">13</div><div class="note" id="kpiNQNote">16 Báo cáo / Tờ trình khác</div></div>
+    <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung</div><div class="num" id="kpiTotal">30</div><div class="note" id="kpiTotalNote">Danh mục trình Kỳ họp thứ Hai</div></div>
+    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num" id="kpiNQ">14</div><div class="note" id="kpiNQNote">16 Báo cáo / Tờ trình khác</div></div>
     <div class="kpi done"><span class="bar"></span><div class="lab">Đã trình UBND tỉnh</div><div class="num" id="kpiDone">7</div><div class="note" id="kpiDonePct">Đạt 23,3% khối lượng</div></div>
     <div class="kpi pending"><span class="bar"></span><div class="lab">Chưa trình</div><div class="num" id="kpiPend">23</div><div class="note">Cần đẩy nhanh tiến độ</div></div>
     <div class="kpi deadline"><span class="bar"></span><div class="lab">Thời hạn còn lại</div><div class="num" id="kpiDays">—</div><div class="note">Tính đến hạn 17/6/2026</div></div>
@@ -251,7 +251,7 @@
           <div class="li"><span class="sw" style="background:#cfcabd"></span> Tổng nội dung <b id="legTotal">0</b></div>
         </div>
       </div>
-      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 29 nội dung (13 Nghị quyết). Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
+      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 30 nội dung (14 Nghị quyết). Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
     </div>
 
     <div class="panel">
@@ -304,8 +304,8 @@
   </div>
 
   <footer>
-    Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 16h00 ngày 04/6/2026.<br>
-    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 29 nội dung (13 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
+    Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 08h00 ngày 05/6/2026.<br>
+    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 30 nội dung (14 Nghị quyết) · Đã trình: 07 · Hạn: 17/6/2026.</b>
   </footer>
 </div>
 
@@ -326,10 +326,12 @@ const TASKS = [
   {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về công tác chỉ đạo, điều hành 6 tháng đầu năm 2026, phương hướng, nhiệm vụ công tác 6 tháng cuối năm 2026',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
   {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về tình hình thực hiện công tác phòng, chống tội phạm và vi phạm pháp luật 6 tháng đầu năm 2026, phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Công an tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
   {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về tình hình thực hiện công tác phòng, chống tham nhũng, tiêu cực 6 tháng đầu năm 2026, phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Thanh tra tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
+  {l:'CT',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả công tác tiếp công dân, giải quyết khiếu nại, tố cáo 6 tháng đầu năm 2026 và phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Thanh tra tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
 
   // II — Hồ Thị Nguyên Thảo
   {l:'PCT1',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về thực hiện các Kết luận của Chủ tọa Kỳ họp tại Kỳ họp thứ 28 HĐND tỉnh Phú Yên khóa VIII (trước đây) và Kỳ họp thứ Hai HĐND tỉnh Đắk Lắk khóa X',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 186/BC-UBND ngày 28/5/2026 của UBND tỉnh'},
   {l:'PCT1',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về trả lời kiến nghị của cử tri trong đợt tiếp xúc cử tri với người ứng cử đại biểu HĐND tỉnh khóa XI',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 163/BC-UBND ngày 13/5/2026 của UBND tỉnh'},
+  {l:'PCT1',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định chính sách hỗ trợ Tổ Công nghệ số cộng đồng trên địa bàn tỉnh Đắk Lắk',org:'Sở Khoa học và Công nghệ',vp:'Đ/c Khánh - PCVP',div:'Khoa giáo - Văn xã',note:''},
   {l:'PCT1',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện các kiến nghị, đề xuất giám sát của Thường trực HĐND, các Ban của HĐND tỉnh năm 2025',org:'Văn phòng UBND tỉnh',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:''},
 
   // III — Nguyễn Thiên Văn
@@ -359,7 +361,6 @@ const TASKS = [
   {l:'PCT4',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định chính sách hỗ trợ đầu tư hạ tầng kỹ thuật cụm công nghiệp trên địa bàn tỉnh Đắk Lắk',org:'Sở Công Thương',vp:'Đ/c Thượng - PCVP',div:'Công nghiệp và Xây dựng',note:''},
   {l:'PCT4',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định mức chi phí quản lý thực hiện Pháp lệnh ưu đãi Người có công với cách mạng do ngân sách Trung ương đảm bảo trên địa bàn tỉnh Đắk Lắk',org:'Sở Nội vụ',vp:'Đ/c Toàn - PCVP',div:'Nội vụ',note:''},
   {l:'PCT4',type:'NQ',status:'pending',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định tiêu chí thành lập Đội dân phòng và số lượng thành viên Đội dân phòng trên địa bàn tỉnh Đắk Lắk',org:'Công an tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
-  {l:'PCT4',type:'BC',status:'pending',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả công tác tiếp công dân, giải quyết khiếu nại, tố cáo 6 tháng đầu năm 2026 và phương hướng, nhiệm vụ 6 tháng cuối năm 2026',org:'Thanh tra tỉnh',vp:'Đ/c Khoa - PCVP',div:'Nội chính',note:''},
 ];
 
 /* ====================== TRẠNG THÁI ====================== */
