@@ -2,10 +2,10 @@
 
 Dashboard theo dõi tiến độ chuẩn bị các nội dung trình **Kỳ họp thứ Hai, HĐND tỉnh khóa XI (nhiệm kỳ 2026–2030)**, phân công cho Chủ tịch và các Phó Chủ tịch UBND tỉnh.
 
-## Tổng quan số liệu (cập nhật 15h00 ngày 07/6/2026)
+## Tổng quan số liệu (cập nhật 18h00 ngày 07/6/2026)
 
-- **29** nội dung trình kỳ họp (trong đó **14 Nghị quyết**).
-- **14** nội dung đã trình UBND tỉnh.
+- **29** nội dung trình kỳ họp (trong đó **14 Nghị quyết** theo danh mục chi tiết).
+- **16** nội dung đã trình UBND tỉnh.
 - UBND tỉnh có Công văn số 8035/UBND-TH (05/6/2026) yêu cầu các sở, ngành trình UBND tỉnh **trước ngày 08/6/2026**.
 - Hạn hoàn thành thủ tục, ký gửi HĐND tỉnh: **chậm nhất 17/6/2026** (gửi 35 bộ hồ sơ).
 
@@ -13,8 +13,8 @@ Phân bổ theo lãnh đạo:
 
 | Mục | Đồng chí lãnh đạo | Chức danh | Số nội dung | Đã trình |
 |----|-------------------|-----------|:-----------:|:--------:|
-| I | Chủ tịch UBND tỉnh | Chủ tịch | 3 | 1 |
-| II | Hồ Thị Nguyên Thảo | Phó Chủ tịch Thường trực | 5 | 2 |
+| I | Chủ tịch UBND tỉnh | Chủ tịch | 3 | 2 |
+| II | Hồ Thị Nguyên Thảo | Phó Chủ tịch Thường trực | 5 | 3 |
 | III | Nguyễn Thiên Văn | Phó Chủ tịch | 10 | 6 |
 | IV | Trương Công Thái | Phó Chủ tịch | 7 | 1 |
 | V | Đào Mỹ | Phó Chủ tịch | 4 | 4 |
@@ -38,4 +38,4 @@ Dữ liệu nằm trong mảng `TASKS` ở phần `<script>` của file `index.h
 Mọi con số thống kê (tổng, số Nghị quyết, đã trình/chưa trình, %) được tính tự động từ mảng này.
 
 ---
-*Nguồn: Văn phòng UBND tỉnh — cập nhật 15h00 ngày 07/6/2026. Bảng phục vụ công tác chỉ đạo, điều hành.*
+*Nguồn: Văn phòng UBND tỉnh — cập nhật 18h00 ngày 07/6/2026. Bảng phục vụ công tác chỉ đạo, điều hành.*
