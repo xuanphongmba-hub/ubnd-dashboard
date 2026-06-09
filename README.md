@@ -5,7 +5,7 @@ Dashboard theo dõi tiến độ chuẩn bị các nội dung trình **Kỳ họ
 ## Tổng quan số liệu (cập nhật 11h15 ngày 09/6/2026)
 
 - **29** nội dung trình kỳ họp (trong đó **14 Nghị quyết**).
-- **22** nội dung đã trình UBND tỉnh.
+- **23** nội dung đã trình UBND tỉnh.
 - UBND tỉnh có Công văn số 8035/UBND-TH (05/6/2026) yêu cầu các sở, ngành trình UBND tỉnh **trước ngày 08/6/2026**.
 - Hạn hoàn thành thủ tục, ký gửi HĐND tỉnh: **chậm nhất 17/6/2026** (gửi 35 bộ hồ sơ).
 
@@ -16,7 +16,7 @@ Phân bổ theo lãnh đạo:
 | I | Chủ tịch UBND tỉnh | Chủ tịch | 3 | 2 |
 | II | Hồ Thị Nguyên Thảo | Phó Chủ tịch Thường trực | 5 | 3 |
 | III | Nguyễn Thiên Văn | Phó Chủ tịch | 11 | 11 |
-| IV | Trương Công Thái | Phó Chủ tịch | 6 | 2 |
+| IV | Trương Công Thái | Phó Chủ tịch | 6 | 3 |
 | V | Đào Mỹ | Phó Chủ tịch | 4 | 4 |
 
 ## Tính năng
