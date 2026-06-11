@@ -2,7 +2,7 @@
 
 Dashboard theo dõi tiến độ chuẩn bị các nội dung trình **Kỳ họp thứ Hai, HĐND tỉnh khóa XI (nhiệm kỳ 2026–2030)**, phân công cho Chủ tịch và các Phó Chủ tịch UBND tỉnh.
 
-## Tổng quan số liệu (cập nhật 16h00 ngày 10/6/2026)
+## Tổng quan số liệu (cập nhật 16h30 ngày 11/6/2026)
 
 - **30** nội dung trình kỳ họp (trong đó **15 Nghị quyết**).
 - **26** nội dung đã trình UBND tỉnh.
@@ -38,4 +38,4 @@ Dữ liệu nằm trong mảng `TASKS` ở phần `<script>` của file `index.h
 Mọi con số thống kê được tính tự động từ mảng này.
 
 ---
-*Nguồn: Văn phòng UBND tỉnh — cập nhật 16h00 ngày 10/6/2026. Bảng phục vụ công tác chỉ đạo, điều hành.*
+*Nguồn: Văn phòng UBND tỉnh — cập nhật 16h30 ngày 11/6/2026. Bảng phục vụ công tác chỉ đạo, điều hành.*
