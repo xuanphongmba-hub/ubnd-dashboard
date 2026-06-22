@@ -227,7 +227,7 @@
   <!-- KPI -->
   <section class="kpis">
     <div class="kpi total"><span class="bar"></span><div class="lab">Tổng số nội dung</div><div class="num" id="kpiTotal">35</div><div class="note" id="kpiTotalNote">Danh mục trình Kỳ họp thứ Hai</div></div>
-    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num" id="kpiNQ">21</div><div class="note" id="kpiNQNote">16 Báo cáo / Tờ trình khác</div></div>
+    <div class="kpi nq"><span class="bar"></span><div class="lab">Trong đó Nghị quyết</div><div class="num" id="kpiNQ">20</div><div class="note" id="kpiNQNote">16 Báo cáo / Tờ trình khác</div></div>
     <div class="kpi done"><span class="bar"></span><div class="lab">Đã trình UBND tỉnh</div><div class="num" id="kpiDone">32</div><div class="note" id="kpiDonePct">Đạt 23,3% khối lượng</div></div>
     <div class="kpi pending"><span class="bar"></span><div class="lab">Chưa trình</div><div class="num" id="kpiPend">3</div><div class="note">Cần đẩy nhanh tiến độ</div></div>
     <div class="kpi deadline"><span class="bar"></span><div class="lab">Thời hạn còn lại</div><div class="num" id="kpiDays">—</div><div class="note">Tính đến hạn 17/6/2026</div></div>
@@ -252,7 +252,7 @@
           <div class="li"><span class="sw" style="background:#cfcabd"></span> Tổng nội dung <b id="legTotal">0</b></div>
         </div>
       </div>
-      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 35 nội dung (21 Nghị quyết). Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
+      <p class="scope-note" id="scopeNote">Đang hiển thị tiến độ tổng hợp của 35 nội dung (20 Nghị quyết). Bấm vào từng đồng chí lãnh đạo ở bảng bên để xem riêng.</p>
     </div>
 
     <div class="panel">
@@ -306,7 +306,7 @@
 
   <footer>
     Nguồn dữ liệu: Danh mục nội dung trình Kỳ họp thứ Hai, HĐND tỉnh khóa XI — Văn phòng UBND tỉnh, cập nhật 16h30 ngày 22/6/2026.<br>
-    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 35 nội dung (21 Nghị quyết) · Đã trình: 32 · Hạn: 17/6/2026.</b>
+    Bảng tổng hợp phục vụ công tác chỉ đạo, điều hành. <b>Tổng: 35 nội dung (20 Nghị quyết) · Đã trình: 32 · Hạn: 17/6/2026.</b>
   </footer>
 </div>
 
@@ -341,7 +341,7 @@ const TASKS = [
   {l:'PCT2',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện Chương trình mục tiêu quốc gia về giảm nghèo bền vững tỉnh Đắk Lắk, giai đoạn 2021 - 2025',org:'Sở Nông nghiệp và Môi trường',vp:'Đ/c Hùng - PCVP',div:'Nông nghiệp và Môi trường',note:'UBND tỉnh đã trình Báo cáo số 215/BC-UBND ngày 11/6/2026 gửi HĐND tỉnh.'},
   {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định nội dung, mức chi để tổ chức các kỳ thi, cuộc thi, hội thi, hội thao, hội khỏe Phù Đổng, hoạt động sáng kiến trên địa bàn tỉnh Đắk Lắk',org:'Sở Giáo dục và Đào tạo',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo và Văn xã',note:'BTVTU Đã trình Đảng ủy UBND tỉnh tại Tờ trình số 202/TTr-UBND ngày 12/6/2026 - Đảng ủy UBND tỉnh đã có Tờ trình số 457-TTr/ĐU ngày 18/6/2026 xin ý kiến BTVTU'},
   {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Tờ trình của UBND tỉnh và dự thảo Nghị quyết của HĐND tỉnh quy định về nhân sự, kinh phí để thực hiện việc dạy và học tiếng Việt cho trẻ em là người dân tộc thiểu số trước khi vào lớp Một trên địa bàn tỉnh Đắk Lắk',org:'Sở Giáo dục và Đào tạo',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo và Văn xã',note:'BTVTU Đã trình Đảng ủy UBND tỉnh tại Tờ trình số 203/TTr-UBND ngày 12/6/2026 - Đảng ủy UBND tỉnh đã có Tờ trình số 458-TTr/ĐU ngày 18/6/2026 xin ý kiến BTVTU'},
-  {l:'PCT2',type:'NQ',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện các Nghị quyết của HĐND tỉnh có liên quan đến thực hiện chính sách thu hút, đào tạo và đãi ngộ bác sĩ và một số chế độ chính sách ưu đãi, hỗ trợ đối với viên chức công tác trong lĩnh vực y tế và nhân viên y tế thôn, buôn, tổ dân phố trên địa bàn tỉnh Đắk Lắk (Nghị quyết số 12/2019/NQ-HĐND ngày 6/12/2019)',org:'Sở Y tế',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo - Văn xã',note:'Đã báo cáo HĐND tỉnh tại Báo cáo số 225/BC-UBND ngày 16/6/2026'},
+  {l:'PCT2',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện các Nghị quyết của HĐND tỉnh có liên quan đến thực hiện chính sách thu hút, đào tạo và đãi ngộ bác sĩ và một số chế độ chính sách ưu đãi, hỗ trợ đối với viên chức công tác trong lĩnh vực y tế và nhân viên y tế thôn, buôn, tổ dân phố trên địa bàn tỉnh Đắk Lắk (Nghị quyết số 12/2019/NQ-HĐND ngày 6/12/2019)',org:'Sở Y tế',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo - Văn xã',note:'Đã báo cáo HĐND tỉnh tại Báo cáo số 225/BC-UBND ngày 16/6/2026'},
   {l:'PCT2',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện Chương trình giáo dục phổ thông năm 2018 trên địa bàn tỉnh Đắk Lắk',org:'Sở Giáo dục và Đào tạo',vp:'Đ/c Toàn - PCVP',div:'Khoa giáo - Văn xã',note:'Báo cáo số 222/BC-UBND ngày 12/6/2026'},
   {l:'PCT3',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về kết quả thực hiện kế hoạch phát triển kinh tế - xã hội, đảm bảo quốc phòng, an ninh 6 tháng đầu năm và các nhiệm vụ trọng tâm 6 tháng cuối năm 2026',org:'Sở Tài chính',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'BTVTU, TU Đã trình Đảng ủy UBND tỉnh tại Tờ trình số 205/TTr-UBND ngày 12/6/2026 - Đảng ủy UBND tỉnh đã có Tờ trình số 463-TTr/ĐU ngày 18/6/2026 xin ý kiến BTVTU'},
   {l:'PCT3',type:'BC',status:'submitted',content:'Dự thảo Báo cáo của UBND tỉnh về đánh giá bổ sung kết quả thực hiện kế hoạch phát triển kinh tế - xã hội; đảm bảo quốc phòng - an ninh năm 2025',org:'Sở Tài chính',vp:'Đ/c Toàn - PCVP',div:'Tổng hợp',note:'Báo cáo số 219/BC-UBND ngày 12/6/2026'},
